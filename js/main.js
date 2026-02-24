@@ -59,5 +59,13 @@ function flipcard() {
 		const card = btn.closest('.card');
 		if (!card) return;
 		card.classList.toggle('is-flipped');
+		if (!card.classList.contains('is-flipped')) {
+			const img = card.querySelector('.card-front .img-holder img');
+			if (!img) return;
+			img.style.transition = 'none';
+			img.style.transform = 'translateY(0)';
+			img.offsetHeight;
+			img.style.transition = '';
+		}
 	});
 }
